@@ -140,6 +140,8 @@ body {
     /* border-radius: 10px; */
 }
 
+
+
 .modal input {
     height: 40px;
     padding: 5px 10px;
@@ -222,6 +224,7 @@ body {
     background: #dad6d1;
 }
 
+/* add commnet later */
 .small {
     width: 50px !important;
 }
