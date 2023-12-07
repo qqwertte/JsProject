@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Military Commissariat</title>
+        <link rel="stylesheet" href="Military%20Commissariat.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    </head>
+
+    <body>
+        <div class="GeneralDiv">
+            <h1 id="yeViyskomat" align="center">єВійськкомат</h1>
+            <div class="content-container">
+                <div class="text-container">
+                    <div class="table-container">
+                        <table class="scrollable-content" id="myTable">
+                            <!-- Заголовки таблиці -->
+                            <thead>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Військкомат</th>
+                                    <th>Адреса</th>
+                                    <th>Витрати на працівника</th>
+                                    <th>Кількість працівників</th>
+                                    <th>Кількість приписаних</th>
+                                    <th class="small"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="right-button">
+                        Сортувати за к-стю працівників
+                    </button>
+                    <button class="right-button">
+                        Середні витрати по військкоматах
+                    </button>
+                    <button class="right-button">
+                        Працівників менше 50% к-сті приписаних
+                    </button>
+                    <button
+                        class="right-button"
+                        id="expenses-more-than-avarage"
+                    >
+                        Витрати на працівника більші за середні по всіх
+                        військкоматах
+                    </button>
+                    <button class="right-button" id="show-four">
+                        Вивести чотири військкомати з вищою кількістю
+                        приписаних, але з нижчими витратами на працівника
+                        порівняно з середнім
+                    </button>
+                    <button class="right-button">
+                        Вивести загальний список
+                    </button>
+                    <button class="right-button">
+                        Вивести список, який на екрані у файл
+                    </button>
+                    <button class="right-button">Додати Військкомат</button>
+                    <label for="file-upload" id="file-upload-label">
+                        Загрузити файл
+                        <input
+                            type="file"
+                            id="file-upload"
+                            name="file-upload"
+                        />
+                    </label>
+                </div>
+            </div>
+
+            <div id="addCommissariat" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <form id="addCommissariatForm">
+
+                        <label for="number">Номер:</label>
+                        <input type="text"  id="number" name="number" /><br /><br />
+
+                        <label for="name">Назва:</label>
+                        <input type="text"  id="name" name="name" /><br /><br />
+
+                        <label for="address">Адреса:</label>
+                        <input
+                            type="text"
+                            id="address"
+                            name="address"
+                        /><br /><br />
+
+                        <label for="expenses">Витрати на працівника:</label>
+                        <input
+                            type="number"
+                            id="expenses"
+                            name="expenses"
+                        /><br /><br />
+
+                        <label for="employees">Кількість працівників:</label>
+                        <input
+                            type="number"
+                            id="employees"
+                            name="employees"
+                        /><br /><br />
+
+                        <label for="assigned">Кількість приписаних:</label>
+                        <input
+                            type="number"
+                            id="assigned"
+                            name="assigned"
+                        /><br /><br />
+
+                        <div class="input-container">
+                            <input type="submit"  value="Надіслати" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <script src="MilitaryCommissariat.js"></script>
+        <script src="MilitaryCommissariatApp.js"></script>
+    </body>
+</html>

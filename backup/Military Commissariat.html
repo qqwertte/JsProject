@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Military Commissariat</title>
+    <link rel="stylesheet" href="Military%20Commissariat.css">
+</head>
+
+<body>
+<div class="GeneralDiv">
+    <h1 id="yeViyskomat" align="center">єВійськкомат</h1>
+    <div class="content-container">
+        <div class="text-container">
+            <div class="table-container">
+                <table class="scrollable-content" id="myTable">
+                    <!-- Заголовки таблиці -->
+                    <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Військкомат</th>
+                        <th>Адреса</th>
+                        <th>Витрати на працівника</th>
+                        <th>Кількість працівників</th>
+                        <th>Кількість приписаних</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    <!-- Рядки таблиці -->
+                    <tr>
+                        <td>1</td>
+                        <td>А</td>
+                        <td>Адреса</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>85</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Б</td>
+                        <td>Адреса</td>
+                        <td>228</td>
+                        <td>7</td>
+                        <td>41</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>В</td>
+                        <td>Адреса</td>
+                        <td>300</td>
+                        <td>8</td>
+                        <td>55</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Г</td>
+                        <td>Адреса</td>
+                        <td>150</td>
+                        <td>3</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Д</td>
+                        <td>Адреса</td>
+                        <td>500</td>
+                        <td>1</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Д</td>
+                        <td>Адреса</td>
+                        <td>500</td>
+                        <td>20</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Д</td>
+                        <td>Адреса</td>
+                        <td>500</td>
+                        <td>30</td>
+                        <td>10</td>
+                    </tr>
+                    <!-- Додаткові рядки можна додавати за потреби -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="right-button">Сортувати за к-стю працівників</button>
+            <button class="right-button">Середні витрати по військкоматах</button>
+            <button class="right-button">Працівників менше 50% к-сті приписаних</button>
+            <button class="right-button">Витрати на працівника більші за середні по всіх військкоматах</button>
+            <button class="right-button">Вивести чотири військкомати з вищою кількістю приписаних, але з нижчими витратами на працівника порівняно з середнім</button>
+            <button class="right-button">Вивести загальний список</button>
+            <button class="right-button">Вивести список, який на екрані у файл</button>
+            <button class="right-button">Додати Військкомат</button>
+        </div>
+    </div>
+</div>
+<script src="MilitaryCommissariat.js"></script>
+<script src="MilitaryCommissariatApp.js"></script>
+</body>
+</html>

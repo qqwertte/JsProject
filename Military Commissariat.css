@@ -1,0 +1,228 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: center;
+    background: linear-gradient(#3498db, #fff200);
+    display: flex;
+    font-family: "Dosis", sans-serif;
+    height: inherit;
+    justify-content: center;
+}
+
+.GeneralDiv {
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: rgba(220, 220, 220, 0.7);
+    border: 1px solid rgba(220, 220, 220, 0.7);
+    height: 650px;
+    width: 1000px;
+    padding: 20px;
+    display: inline-block;
+}
+#yeViyskomat {
+    text-shadow: 1px 1px 2px #232323;
+    margin-bottom: 10px;
+}
+
+/* Загальні стилі для контейнера тексту */
+.text-container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid #dad6d1;
+    background-color: #eceae6;
+    border-radius: 7px;
+    overflow-x: auto;
+    overflow-y: auto;
+    display: flex;
+    height: 550px;
+    max-height: 550px;
+    flex-direction: column; /* Змінюємо напрямок на вертикальний (вниз) */
+}
+
+/* Стилі для заголовків таблиці */
+.text-container th {
+    width: 65%; /* Зменшено ширину текстового контейнера */
+    margin-right: 10px; /* Додано відступ справа для вирівнювання */
+}
+
+/* Стилі для таблиці */
+.scrollable-content {
+    overflow-x: hidden; /* Забороняємо горизонтальну прокрутку в таблиці */
+    border-collapse: collapse; /* Запобігає розділенню рамок між ячками */
+    width: 100%; /* Розширення таблиці на весь розмір батьківського контейнера */
+}
+
+/* Стилі для тексту всередині таблиці */
+.text-container td {
+    color: #b9b9b9;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 8px;
+    border: 1px solid #ddd; /* Рамка між ячками таблиці */
+    text-align: center; /* Відцентрування вмісту усередині ячейок */
+}
+
+/* Додаткові стилі для заголовка */
+.text-container .table-container {
+    overflow: auto;
+}
+
+/* Стилі для кнопок */
+.button-container {
+    width: 25%; /* Збільшено ширину контейнера кнопок */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 550px;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-button {
+    padding: 10px;
+    font-size: 14px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Стилі для заголовків таблиці */
+.text-container th:nth-child(1) {
+    width: 5%; /* Зменшено ширину для колонки "№" */
+}
+
+.text-container th {
+    width: 145px; /* Розділення решти ширини між іншими колонками */
+    margin-right: 10px; /* Додано відступ справа для вирівнювання */
+}
+
+/* Стилі для тексту всередині таблиці */
+.text-container td {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 8px;
+    border: 1px solid #ddd; /* Рамка між ячками таблиці */
+    text-align: center; /* Відцентрування вмісту усередині ячейок */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    /* border-radius: 10px; */
+}
+
+.modal input {
+    height: 40px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 500px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.modal-content label {
+    display: inline-block;
+    width: 200px;
+}
+
+.modal-content form {
+    margin-top: 20px;
+}
+
+.modal-content .input-container {
+    display: flex;
+    justify-content: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#file-upload-label {
+    padding: 10px;
+    font-size: 14px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+}
+
+#file-upload {
+    display: none;
+}
+
+.delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.delete:hover {
+    background: #dad6d1;
+}
+
+.small {
+    width: 50px !important;
+}
+
