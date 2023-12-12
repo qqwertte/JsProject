@@ -64,7 +64,6 @@ class MilitaryCommissariatApp extends MilitaryCommissariat {
 
                     this.renderList(sortedData);
 
-
                 });
             }
         });
@@ -195,13 +194,13 @@ class MilitaryCommissariatApp extends MilitaryCommissariat {
             let NumberOfCommissariats = 0;
 
             // Проходимо всі рядки таблиці, починаючи з індексу 0
-            for (var i = 0; i < this.initialData.length; i++) {
+            for (let i = 0; i < this.initialData.length; i++) {
                 // Отримуємо комірку з витратами на працівника (індекс 5)
-                var RegisteredCell = this.initialData[i][5];
-                var expensesCell = this.initialData[i][3];
+                let RegisteredCell = this.initialData[i][5];
+                let expensesCell = this.initialData[i][3];
 
                 // Отримуємо значення витрат і конвертуємо його в число
-                var Registered = parseFloat(RegisteredCell);
+                let Registered = parseFloat(RegisteredCell);
                 // Отримуємо значення витрат і конвертуємо його в число
                 let expenses = parseFloat(expensesCell);
 
@@ -248,7 +247,7 @@ class MilitaryCommissariatApp extends MilitaryCommissariat {
             let buttonText = button.textContent.trim();
 
             // Порівняйте текст кнопки з використанням умовного оператора if
-            if (buttonText === "Вивести загальний список") {
+            if (buttonText === "Вивести початковий список") {
                 button.addEventListener("click", () => {
                     this.data = this.initialData;
                     this.renderList(this.data);
@@ -269,26 +268,39 @@ class MilitaryCommissariatApp extends MilitaryCommissariat {
             // Порівняйте текст кнопки з використанням умовного оператора if
             if (buttonText === "Вивести список, який на екрані у файл") {
                 button.addEventListener("click", () => {
-                    // Перетворення даних у рядок
-                    const textToSave = this.data
-                        .map((row) => row.join(", "))
-                        .join("\n");
+                    try{
+                        if (this.data.length === 0) {
+                            throw `Empty list!!!`;
+                        }
 
-                    // Створення нового Blob (бінарного великого об'єкта) з текстовими даними
-                    const blob = new Blob([textToSave], { type: "text/plain" });
+                        // Перетворення даних у рядок
+                        const textToSave = this.data
+                            .map((row) => row.join(", "))
+                            .join("\n");
 
-                    // Створення посилання для завантаження
-                    const downloadLink = document.createElement("a");
-                    downloadLink.download = "data.txt";
-                    downloadLink.href = window.URL.createObjectURL(blob);
-                    downloadLink.style.display = "none";
+                        // Створення нового Blob (бінарного великого об'єкта) з текстовими даними
+                        const blob = new Blob([textToSave], { type: "text/plain" });
 
-                    // Додавання посилання до DOM та імітація кліку
-                    document.body.appendChild(downloadLink);
-                    downloadLink.click();
+                        // Створення посилання для завантаження
+                        const downloadLink = document.createElement("a");
+                        downloadLink.download = "data.txt";
+                        downloadLink.href = window.URL.createObjectURL(blob);
+                        downloadLink.style.display = "none";
 
-                    // Видалення посилання після завантаження
-                    document.body.removeChild(downloadLink);
+                        // Додавання посилання до DOM та імітація кліку
+                        document.body.appendChild(downloadLink);
+                        downloadLink.click();
+
+                        // Видалення посилання після завантаження
+                        document.body.removeChild(downloadLink);
+
+                    }catch(error) {
+                        Toastify({
+                            text: error,
+                            duration: 3000
+                        }).showToast();
+                        return;
+                    }
                 });
             }
         });
@@ -463,7 +475,6 @@ class MilitaryCommissariatApp extends MilitaryCommissariat {
 
 //data to first screen table
 const data = [
-
 ];
 
 const app = new MilitaryCommissariatApp(data);
